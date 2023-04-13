@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>원의 넓이, 둘레구하기</title>
+    <script>
+        const r = prompt('반지름을 입력받아')*1
+        const pi = 3.14
+        // 원의 둘레
+        const Cr = r * 2 * pi
+        // 넓이를 구하는
+        const Cv = r * r * pi
+        console.log('구한 원의 둘레는 : '+Cr,'구한 원의 넓이는 :' +Cv)
+        // 사이트를 만들어라.
+        document.write(`<h1>입력하신 값${r} 을 이용해 구한<br>
+원의 둘레:${Cr}이고<br>
+원의 넓이:${Cv}<br>    
+입니다.</h1>`)   
+    </script>
+</head>
+<body>
+</body>
+</html>
