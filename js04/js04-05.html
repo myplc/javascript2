@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            transition: move 1s;
+
+        }
+
+        @keyframes move {
+            0% {
+
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(300px, 300px);
+
+            }
+        }
+    </style>
+    <script>
+        const fruit = ['딸기', '바나나', '사과', '수박', '배', '키위', '복숭아', '포도']
+        const input = prompt(`${fruit} 중에서 빼실 과일 있으면 말씀 주세요.`)
+        const out = fruit.splice(fruit.indexOf(input), 1)
+        document.write(`<h1>네 요청하신 ${out} 과일을 빼고, ${fruit}가 남았습니다.</h1>`)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
