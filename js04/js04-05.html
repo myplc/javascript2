@@ -5,35 +5,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        h1 {
-            transition: move 1s;
-
-        }
-
-        @keyframes move {
-            0% {
-
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(300px, 300px);
-
-            }
-        }
-    </style>
+    <title>배열문제</title>
     <script>
-        const fruit = ['딸기', '바나나', '사과', '수박', '배', '키위', '복숭아', '포도']
-        const input = prompt(`${fruit} 중에서 빼실 과일 있으면 말씀 주세요.`)
-        const out = fruit.splice(fruit.indexOf(input), 1)
-        document.write(`<h1>네 요청하신 ${out} 과일을 빼고, ${fruit}가 남았습니다.</h1>`)
+        const arr = ['딸기', '바나나', '사과', '수박', '배', '키위', '복숭아', '포도']
+        const input = prompt(`${arr} 중 제거하고 싶은 품목을 입력하세요.`)
+        const input2 = prompt(`${arr} 외에 추가하고 싶은 품목을 입력하세요.`)
+        console.log(arr.splice(arr.indexOf(input), 1))
+        console.log(arr.splice(arr.length - 2, 0, input2))
+        document.write(`<h1>요청하신 ${input}을 제거한 품목은 ${arr} 입니다.</h1>`)
     </script>
 </head>
 
 <body>
+    <!DOCTYPE html>
+    <html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            h1 {
+                transition: move 1s;
+
+            }
+
+            @keyframes move {
+                0% {
+
+                    transform: translate(0, 0);
+                }
+
+                100% {
+                    transform: translate(300px, 300px);
+
+                }
+            }
+        </style>
+        <script>
+            const fruit = ['딸기', '바나나', '사과', '수박', '배', '키위', '복숭아', '포도']
+            const input = prompt(`${fruit} 중에서 빼실 과일 있으면 말씀 주세요.`)
+            const out = fruit.splice(fruit.indexOf(input), 1)
+            document.write(`<h1>네 요청하신 ${out} 과일을 빼고, ${fruit}가 남았습니다.</h1>`)
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+
 
 </body>
+
+</html>
 
 </html>
