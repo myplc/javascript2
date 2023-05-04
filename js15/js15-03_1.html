@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제내기</title>
+    <script>
+
+        // arr = []
+        // arr1 = []
+        // ct = 0;
+        /* for 사용 */
+        // for (let i=0;i<=100;i++){
+        //     if(i>=0&&i<=32){arr.push(ct+=2)}
+        //     if(i>32&&i<70){arr.push(++ct)}
+        //     if(i>=70&&i<=100){arr.push(ct-=2)}
+        // }
+
+        /* Array , fill 사용 */
+        // Array(101).fill(0).map((_,i)=>{
+        //     if(i>=0&&i<=32){arr.push(ct+=2)}
+        //     if(i>32&&i<70){arr.push(++ct)}
+        //     if(i>=70&&i<=100){arr.push(ct-=2)}
+        // })
+        let ct = 0
+        const arr = Array(200).fill(0).map((_, i) => {
+            if (i >= 0 && i < 77) ct = ct + 1
+            if (i >= 77 && i <= 166) ct = ct + 2
+            if (i > 166 && i < 200) ct = ct - 1
+            return ct
+        })
+        console.log(arr)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
