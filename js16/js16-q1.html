@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문1</title>
+    <style>
+    </style>
+    <script>
+        let ct = 1
+        function red() {
+            document.close()
+            document.write(`<div style="width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border:2px solid black;
+    background-color: red;">${ct}</div>`)
+            ct++
+            setTimeout(white, 1000)
+        }
+        function white() {
+            document.close()
+            document.write(`<div style="width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border:2px solid black;
+    background-color: #fff;"></div>`)
+            if (ct <= 5) setTimeout(red, 500);
+        }
+        red()
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
