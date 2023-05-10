@@ -6,23 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>this에 관하여</title>
     <script>
-      const obj1 = {
-        a: 1,
-        b: 2,
-        c: function () {
-          return this.b;
-        },
-        d: function () {
-          console.log(this.b);
-        },
-      };
-      console.log(obj1.c());
-      obj1.d();
-
-      function test() {
-        console.log(this.document);
+      function f1() {
+        return this;
       }
-      test();
+
+      // 브라우저
+      console.log(f1() === window); // true
+
+      // Node.js
+      // f1() === global; // true
     </script>
   </head>
   <body></body>
