@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머응용</title>
+    <script>
+        let ct = 0
+        const nInput = prompt('얼마 까지 숫자를 상승 시킬까요?')
+        const tInput = prompt('몇초 간격으로 상승 시킬까요?', 1) * 1
+        const tid = setInterval(() => { document.close(); document.write(`<h1>${++ct} 입니다.</h1`) }, tInput * 1000)
+        setTimeout(() => {
+            clearInterval(tid)
+            document.write(`<hr><h1 style="color:red"> 목표값 ${ct}가 되었습니다!!!</h1>`)
+        }, nInput * tInput * 1000)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
