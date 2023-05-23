@@ -14,8 +14,22 @@
         document.body.append(h1, div);
         div.append(indiv, span);
         h1.textContent = "className과 classList를 사용해보기";
-        div.className = "클래스1번"; // className에 대입하기
-        indiv.classList.add("내부클래스1", "여기추가요"); // 클래스 추가 가능
+        /* className에 대입하기*/
+        div.className = "클래스1번";
+        /* classList를 이용한 메소드: 추가, 복수가능 */
+        indiv.classList.add("내부클래스1", "여기추가요");
+        /* classList를 이용한 메소드: 존재확인(boolen) */
+        const what = indiv.classList.contains("여기추가요");
+        console.log(what);
+        /* classList를 이용한 메소드: 변경 */
+        span.classList.add("c1", "c2", "c3", "c4");
+        span.classList.replace("c2", "cc22");
+        /* classList를 이용한 메소드: 삭제 */
+        span.classList.remove("c4");
+        /* classList를 이용한 속성: 클래스의 갯수 */
+        const length = span.classList.length;
+        span.textContent = length + "개의 클래스를 가짐";
+        console.log(length);
       });
     </script>
   </head>
