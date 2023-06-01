@@ -60,6 +60,7 @@
           console.log(fid); // 인덱스 번호 확인
           edata.splice(fid, 1); // 배열속에 찾은 인덱스 번호 삭제
           localSave(edata);
+          location.reload(); // 새로고침
         });
 
         const getDiv = document.querySelector("div");
