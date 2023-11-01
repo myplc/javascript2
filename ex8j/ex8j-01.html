@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>가상선택자 추가응용</title>
     <style>
-        #wrapper{
+        #wrapper {
             width: 250px;
             height: 300px;
             background: skyblue;
+            text-align: center;
         }
-        .box{
+
+        .box {
             float: left;
             width: 30px;
             height: 30px;
             border: 1px solid #000;
             margin: 0px 5px 5px 0;
+
         }
+
         /* 7의 배수 */
-        .box:nth-child(7n){
+        .box:nth-child(7n) {
             background-color: red;
         }
+
         /* 22부터 끝까지 */
-        .box:nth-child(n+22){
+        .box:nth-child(n+22) {
             background-color: aqua;
         }
+
         /* 첨부터 5까지 */
-        .box:nth-child(-n+5){
+        .box:nth-child(-n+5) {
             background-color: gold;
         }
+
         /* 13부터 18까지 */
-        .box:nth-child(n+13):nth-child(-n+18){
+        .box:nth-child(n+13):nth-child(-n+18) {
             color: red;
             background-color: ivory;
         }
-
     </style>
 </head>
+
 <body>
     <div id="wrapper">
         <div class="box">1</div>
@@ -70,4 +78,5 @@
         <div class="box">28</div>
     </div>
 </body>
+
 </html>
