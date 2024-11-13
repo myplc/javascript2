@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구구단</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            background-color: beige;
+        }
+
+        th,
+        td {
+            border: 2px solid #857979;
+            text-align: center;
+            width: 20%;
+        }
+
+        th {
+            background-color: rgb(78, 92, 38);
+            color: #fff;
+        }
+    </style>
+    <script>
+        const inp = prompt("구구단을 위한 숫자를 입력하세요.");
+        let list = `<table><tr><th colspan="2">${inp} 단</th></tr>`;
+        for (let i = 0; i < 9; i++) {
+            list += `<tr><td>${inp} x ${i + 1}</td><td>${inp * (i + 1)}</td></tr>`;
+        }
+        list += `</table>`;
+        document.write(list);
+    </script>
+</head>
+
+<body></body>
+
+</html>
