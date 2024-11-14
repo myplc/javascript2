@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    div {
+      width: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // const inp = +prompt("몇회 주사위를 던질까요?") || 1000;
+    const inp = 1000; // for test
+    console.time("연산시간측정");
+    const dice = [0, 0, 0, 0, 0, 0, 0];
+    for (let i = 0; i < inp; i++) {
+      const array = new Uint8Array(2);
+      crypto.getRandomValues(array);
+      const ran = (array[0] % 6) + 1;
+      dice[ran - 1]++;
+    }
+    for (let j = 0; j < dice.length - 1; j++) {
+      dice[6] += dice[j];
+    }
+    const dchart = dice.splice(0, dice.length - 1);
+    console.log("결과:", dchart);
+    console.log("검증:", dice);
+    document.write(dchart);
+    console.timeEnd("연산시간측정");
+  </script>
+
+  <script>
+    const ctx = document.getElementById("myChart");
+    const data = {
+      labels: ["숫자1", "숫자2", "숫자3", "숫자4", "숫자5", "숫자6"],
+      datasets: [
+        {
+          label: "주사위 확률게임",
+          data: dchart,
+          backgroundColor: [
+            "rgb(255, 99, 132)",
+            "rgb(75, 192, 192)",
+            "rgb(255, 205, 86)",
+            "rgb(231, 123, 207)",
+            "rgb(54, 162, 235)",
+            "rgb(154, 162, 235)",
+          ],
+        },
+      ],
+    };
+    const config = {
+      type: "polarArea",
+      data: data,
+      options: {},
+    };
+    new Chart(ctx, config);
+  </script>
+</body>
+
+</html>

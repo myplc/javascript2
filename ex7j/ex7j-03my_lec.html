@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    div {
+      /* background-color: rgb(246, 246, 113); */
+      padding: 5px;
+      margin: 5px 90px;
+      height: 30px;
+      border: 1px solid #222;
+      width: 40px;
+      transition: width 1s ease;
+      position: relative;
+    }
+
+    .label {
+      float: left;
+    }
+
+    .val {
+      position: absolute;
+      right: -30px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>주사위 확률</h2>
+  <span class="label">1이 나온 수:</span>
+  <div>
+    숫자1
+    <span class="val"></span>
+  </div>
+  <span class="label">2이 나온 수:</span>
+  <div>숫자2<span class="val"></span></div>
+  <span class="label">3이 나온 수:</span>
+  <div>숫자3<span class="val"></span></div>
+  <span class="label">4이 나온 수:</span>
+  <div>숫자4<span class="val"></span></div>
+  <span class="label">5이 나온 수:</span>
+  <div>숫자5<span class="val"></span></div>
+  <span class="label">6이 나온 수:</span>
+  <div>숫자6<span class="val"></span></div>
+  <script>
+    // const inp = +prompt("몇회 주사위를 던질까요?") || 1000;
+    const inp = 1000; // for test
+    console.time("연산시간측정");
+    const dice = [0, 0, 0, 0, 0, 0, 0];
+    for (let i = 0; i < inp; i++) {
+      const array = new Uint8Array(2);
+      crypto.getRandomValues(array);
+      const ran = (array[0] % 6) + 1;
+      dice[ran - 1]++;
+    }
+    for (let j = 0; j < dice.length - 1; j++) {
+      dice[6] += dice[j];
+    }
+    const dchart = dice.splice(0, dice.length - 1);
+    console.log("결과:", dchart);
+    console.log("검증:", dice);
+    console.timeEnd("연산시간측정");
+
+    /* 시각화 */
+    const divs = document.querySelectorAll("div");
+    const vals = document.querySelectorAll(".val");
+    divs.forEach((v, i) => {
+      vals[i].textContent = `${dchart[i]}`;
+      v.style.backgroundColor = "#" + dchart[i] / (inp / 1000) + "6";
+      requestAnimationFrame(
+        () => (v.style.width = `${dchart[i] / (inp / 1000)}px`)
+      );
+    });
+  </script>
+</body>
+
+</html>
