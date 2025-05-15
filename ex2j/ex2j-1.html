@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>데이터 타입</title>
     <script>
-        var num = 123;
-        var str = "456";
-        var bit = true;
+        const num = 123;
+        const str = "456";
+        const bit = true;
         console.log("============ Note ============");
         console.log('"' + typeof num + "타입" + num + '"의 자료형 변환');
         console.log(String(num), typeof String(num));
@@ -20,9 +20,9 @@
         console.log(String(bit), typeof String(bit));
         console.log(Number(bit), typeof Number(bit));
         console.log("============ Test ============");
-        console.log(num + str, typeof (num + str));
-        console.log(num + bit, typeof (num + bit));
-        console.log(str + bit, typeof (str + bit));
+        console.log("num + str:", num + str, typeof (num + str))
+        console.log("num + bit:", num + bit, typeof (num + bit))
+        console.log("bit + str", bit + str, typeof (bit + str))
         console.log("============ Tip! ============");
         console.log(num + "", typeof (num + ""));
         console.log(!!num, typeof !!num);

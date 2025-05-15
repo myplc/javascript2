@@ -7,7 +7,9 @@
   <title>Document</title>
   <style>
     div {
+      margin: 0 auto;
       width: 500px;
+      text-align: center;
     }
   </style>
 </head>
@@ -16,10 +18,12 @@
   <div>
     <canvas id="myChart"></canvas>
   </div>
+  <div id="result"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     // const inp = +prompt("몇회 주사위를 던질까요?") || 1000;
+    const rst = document.getElementById("result");
     const inp = 1000; // for test
     console.time("연산시간측정");
     const dice = [0, 0, 0, 0, 0, 0, 0];
@@ -35,8 +39,9 @@
     const dchart = dice.splice(0, dice.length - 1);
     console.log("결과:", dchart);
     console.log("검증:", dice);
-    document.write(dchart);
+    // document.write(dchart);
     console.timeEnd("연산시간측정");
+    rst.innerHTML = dchart;
   </script>
 
   <script>
